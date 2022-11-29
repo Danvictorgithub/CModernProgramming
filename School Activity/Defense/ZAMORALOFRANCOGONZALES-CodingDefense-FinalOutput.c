@@ -37,7 +37,7 @@ int main(void)
 
 
 	// Positive Shift
-	// Visualization
+	// Visualization [The numbers given are memory locations]
 	// 1 2 3 4 -> 4 1 2 3
 	// 1 2 3 4
 	// 1 2 4 3
@@ -52,7 +52,7 @@ int main(void)
 			}
 	}
 	// Negative Shift [Modified]
-	// Visualization
+	// Visualization [The numbers given are memory locations]
 	// 1 2 3 4 -> 2 3 4 1
 	// 1 2 3 4
 	// 2 1 3 4
@@ -67,6 +67,7 @@ int main(void)
 				stringList[i+1] = temp;
 			}
 	}
+  // Visualization Results
 	for (i = 0; i < numString ;i++)
 		printf("Word %d: %s \n",i+1,stringList[i]);
 	return 0;
