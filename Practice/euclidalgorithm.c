@@ -25,6 +25,6 @@ int main() {
 	// for (int i = 0; i < 4;i++) {
 	// 	printf("%s ", wordlist[i]);
 	// }
-	printf("%d",gcd(1980,1617));
+	printf("%d",gcd(420,3));
 	return 0;
 }
