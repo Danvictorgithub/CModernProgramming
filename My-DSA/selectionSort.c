@@ -6,6 +6,7 @@ int *selectionSort(int *array, int arraySize) {
 	int i,j;
 	int currentArraySize = arraySize;
 	for (i = 0; i < arraySize;i++) {
+		// Find the minimum value in the array
 		min = array[0];
 		for (j = 0; j < currentArraySize;j++) {
 			if (min >= array[j]) {
@@ -13,8 +14,9 @@ int *selectionSort(int *array, int arraySize) {
 				minIndex = j;
 			}
 		}
-		sortedArray[i] = min;
+		sortedArray[i] = min;//Adds the minimum value in the new array
 		currentArraySize--;
+		// removes the minimum value in the array and shift it to the left
 		for (j = minIndex; j < currentArraySize;j++) {
 			array[j] = array[j+1];
 		}
