@@ -3,12 +3,15 @@ void bubbleSort(int *array,int arraysize) {
 	int i, switched = 0, temp;
 	for (i = 0; i < arraysize-1; i++) {
 		if (array[i] > array[i+1]) {
-			temp = array[i];
+			// Swap
+			// example [1][0] -> [0][1]
+			temp = array[i]; //saved value for swapping
 			array[i] = array[i+1];
 			array[i+1] = temp;
 			switched = 1;
 		}
-	} 
+	}
+	// if swapped/switched, means not perfectly sorted, else sorted
 	if (switched) {
 		bubbleSort(array, arraysize);
 	}
