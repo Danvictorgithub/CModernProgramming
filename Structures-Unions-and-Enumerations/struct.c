@@ -2,22 +2,16 @@
 #include <string.h>
 #define NAME_LEN 25
 
-struct person_name {
-	char first[NAME_LEN + 1];
-	char middle_initial;
-	char last[NAME_LEN + 1];
-};
 struct student {
-	struct person_name name;
-	int id, age;
-	char sex;
-} student1, student2;
-
+	char name[NAME_LEN+1];
+	int id;
+};
 int main(void) {
-	struct person_name new_name = {"DAN VICTOR", 'B' , "LOFRANCO"};
-	student1.name = new_name;
-	student1.id = 21100842;
-	student1.sex = 'M';
-	printf("%s %c %s %d %c", student1.name.first, student1.name.middle_initial, student1.name.last,student1.id,student1.sex);
+	struct student listStudent[] ={
+		{"Dan Victor", 81100842},{"Victor Dan",24800118}
+	};
+	for (int i = 0; i < sizeof(listStudent)/sizeof(listStudent[0]);i++) {
+		printf("%s\n",listStudent[i].name);
+	}
 	return 0;
 }
