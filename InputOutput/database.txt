@@ -1,0 +1,27 @@
+First Name: Dan Victor
+Middle Initial: B
+Last Name: Lofranco
+Full Address: Bayugan City Purok Onse
+First Name: Jhon Dave 
+Middle Initial: C
+Last Name: Bohol
+Full Address: Buena
+First Name: Shaun Niel 
+Middle Initial: A
+Last Name: Ochavo
+Full Address: Bayugan
+
+First Name: Dan Victor
+Middle Initial: B
+Last Name: Lofranco
+Full Address: Purok 4
+
+First Name: a
+Middle Initial: b
+Last Name: c
+Full Address: d
+
+First Name: a
+Middle Initial: b
+Last Name: c
+Full Address: d
