@@ -59,10 +59,41 @@ void printSalary(struct Employee list[], int numEmployee) {
 		printf("%d\n",list[i].Salary);
 	}
 }
+// Step 9
+void printuniquePosition(struct Employee list[], int numEmployee) {
+	char *uniquePosition[5];
+	char *tempPosition;
+	int uniquePositionCounter = 0;
+	int alreadyExitFlag = 0;
+	for (int i = 0; i < numEmployee; i++) {
+		alreadyExitFlag = 0;
+		for (int j = 0; j < uniquePositionCounter ;j++) {
+			if (strcmp(uniquePosition[i],list[i].Position) == 0) {
+				alreadyExitFlag = 1;
+			}
+		}
+		if (!alreadyExitFlag) {
+			printf("Adding %s\n",list[i].Position);
+			tempPosition = malloc(sizeof(char) * strlen(list[i].Position));
+			strcpy(tempPosition,list[i].Position);
+			uniquePosition[i] = tempPosition;
+			uniquePositionCounter++;
+		}
+	}
+	for (int i = 0; i < numEmployee; i++) {
+		printf("%s\n",uniquePosition[i]);
+	}
+}
+void printPosition(struct Employee list[], int numEmployee) {
+	for (int i = 0; i < numEmployee; i++) {
+		printf("%s\n",list[i].Position);
+	}
+}
 int main(void) {
 	struct Employee employees[BUFFERSIZE];
 	FILE *EmployeeDatabase = fopen("Employee.txt","r");
 	FILE *SalaryDatabase = fopen("Salary.txt","r");
+	FILE *PositionDatabase = fopen("Position.txt","r");
 	char key[BUFFERSIZE];
 	int i = 0;
 	// scanf("%d",&numEmployee);
@@ -72,13 +103,15 @@ int main(void) {
 	}
 	else {
 		// Database Initialization
-		while(fscanf(EmployeeDatabase, "%s %s %c %s",key,employees[i].fName,&employees[i].mInitial,employees[i].lName) !=EOF && fscanf(SalaryDatabase,"%s %d",key,&employees[i].Salary) != EOF) {
+		while(fscanf(EmployeeDatabase, "%s %s %c %s",key,employees[i].fName,&employees[i].mInitial,employees[i].lName) !=EOF && fscanf(SalaryDatabase,"%s %d",key,&employees[i].Salary) != EOF && fscanf(PositionDatabase,"%s %s",key,employees[i].Position) != EOF) {
 			i++;
 		}
-		employeewith10kSalary(employees,i);
+		// employeewith10kSalary(employees,i);
 		// searchEmployee(employees,i);
 		// modifyEmployeeSalary(employees,i,5000);
 		// printSalary(employees,i);
+		// printPosition(employees,i);
+		printuniquePosition(employees,i);
 	}
 	return 0;
 }
