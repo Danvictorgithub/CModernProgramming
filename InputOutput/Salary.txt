@@ -1,3 +1,0 @@
-Salary: 25000
-Salary: 26000
-Salary: 1000000

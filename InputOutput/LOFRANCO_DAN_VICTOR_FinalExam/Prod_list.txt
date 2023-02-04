@@ -1,0 +1,12 @@
+P001 Coffee200g 43.25
+P004 DogFood1kg 199.99
+P005 DogTreats30g 50.76
+P010 Eggs1dozen 60.54
+P012 FreshMilk220ml 35.87
+P008 GroundPork1kg 276.98
+P003 PeanutButter200g 187.68
+P002 Peanuts500g 100.00
+P009 PorkChops1kg 306.76
+P011 PotatoChips20g 15.98
+P007 SpicyNoodles 20.00
+P006 TomatoCatsup50g 65.98

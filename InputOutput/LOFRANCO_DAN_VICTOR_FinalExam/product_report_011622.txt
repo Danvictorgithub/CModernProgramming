@@ -1,0 +1,13 @@
+Prod_ID		Prod_Desc	#_of_times_bought	Cust_ID	
+P001		Coffee200g			0	
+P004		DogFood1kg			0	
+P005		DogTreats30g			0	
+P010		Eggs1dozen			0	
+P012		FreshMilk220ml			0	
+P008		GroundPork1kg			0	
+P003		PeanutButter200			0	
+P002		Peanuts500g			0	
+P009		PorkChops1kg			1	-1
+P011		PotatoChips20g			0	
+P007		SpicyNoodles			0	
+P006		TomatoCatsup50g			1	3

@@ -1,0 +1,6 @@
+Forger,Loid 1
+Romaji,Makima 2
+Ito,Junji 3
+Baldy,Saitama 4
+Isayama,Hajime 5
+Unregistered -1

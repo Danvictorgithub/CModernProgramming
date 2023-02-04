@@ -1,5 +1,5 @@
 Full_Address: Philippines Tagbina Poblacion P4
-Full_Address: Philippines Tagbina Sayon P1
-Full_Address: Philippines Poblacion Original P4
-Full_Address: Philippines Tagbina SanJose P1
 Full_Address: Philippines Tagbina Poblacion P2
+Full_Address: Philippines Tagbina SantaMaria P2
+Full_Address: Philippines Tagbina Sayon P0
+Full_Address: Philippines Tagongon Poblacion P2
