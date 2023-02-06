@@ -3,6 +3,10 @@
 #include <stdlib.h>
 void printArray(int *, int, char *);
 void isSorted(int *, int );
+//Insertion Sort
+// if a[i] > a[i+1] then swaps
+// 	then start to backtrack if the rest is unsorted
+// end till all n number of array elements is sorted
 int *insertionSort(int *unsortedArray, int numArray) {
 	int *sortedArray = malloc(sizeof(int)*numArray);
 	memcpy(sortedArray,unsortedArray,numArray*sizeof(int));
@@ -55,11 +59,11 @@ void printArray(int *array, int numArray,char *string) {
 			printf("%d",array[i]);
 		}
 	}
-	printf("}\n");
+	printf("}\n\n");
 }
 int comparator(const void *, const void *);
 void isSorted(int *array, int numArray) {
-	int *sortedArray;
+	int *sortedArray = malloc(sizeof(int)*numArray);
 	memcpy(sortedArray,array,sizeof(int)*numArray);
 	qsort(array,numArray,sizeof(int),comparator);
 	int sortedFlag = 1;

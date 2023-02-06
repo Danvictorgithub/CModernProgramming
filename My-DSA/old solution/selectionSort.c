@@ -28,7 +28,7 @@ void printArray(int *array, int arraySize) {
 	int i;	for( i = 0 ; i < arraySize ;i++) {
 		printf("%d ",array[i]);
 	}
-	printf("%\n");
+	printf("\n");
 }
 
 int main(void) {
