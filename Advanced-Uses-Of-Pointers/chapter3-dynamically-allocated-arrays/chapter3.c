@@ -31,7 +31,8 @@ void callocApplication() {
 // realloc allows pointer sizes to be "reallocate" to selected sizes in which
 // this allows us to update arrays or objects elements
 void reallocApplication() {
-	int *array = malloc(1);
+	int *array = malloc(sizeof(int) *2);
+	int *reallocTemp; 
 	// array = malloc(sizeof(int)*2); // This array for example can only allocate 5 int elements
 	int tempArray[] = {1,2};
 	// memcpy(array,tempArray,sizeof(tempArray));
@@ -39,7 +40,15 @@ void reallocApplication() {
 	for (int i = 0; i < 2;i++) {
 		printf("%d\n",array[i]);
 	}
-	realloc(array,sizeof(int)*5); // now array can get at most 5 elements
+	printf("Realloc Applied\n");
+	reallocTemp = realloc(array,sizeof(int)*5); // now array can get at most 5 elements
+	if (reallocTemp != NULL) {
+		array = reallocTemp; //this is done to avoid segmentation fault
+	}
+	else {
+		printf("Error found in reallocTemp");
+		exit(EXIT_FAILURE);
+	}
 	int tempArray2[] = {2,1,3,4,5};
 	for (int i = 0;  i < 5; i++) {
 		*(array + i) = tempArray2[i];
