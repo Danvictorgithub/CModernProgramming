@@ -61,7 +61,6 @@ void reallocApplication() {
 int main(void) {
 	// mallocApplication();
 	// callocApplication();
-	printf("Hello world\n");
 	reallocApplication();
 	return 0;
 }
