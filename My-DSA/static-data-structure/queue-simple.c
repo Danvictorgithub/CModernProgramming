@@ -4,20 +4,20 @@
 int front = 0, rear = 0;
 int queue[MAXQUEUE];
 int enqueue(int value) {
-	if (front >= MAXQUEUE) {
+	if (rear >= MAXQUEUE) {
 		printf("queue is full");
 		exit(0);
 		return 0;
 	}
-	queue[front++] = value; 
+	queue[rear++] = value; 
 	return 1;
 }
 int dequeue() {
-	if (rear == front) {
+	if (front == front) {
 		printf("queue is empty");
 		exit(0);
 	}
-	return queue[rear++];
+	return queue[front++];
 }
 int isEmpty() {
 	return (rear == front) ? 1 : 0;
