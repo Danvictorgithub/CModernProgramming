@@ -18,13 +18,14 @@ int push(char value) {
 }
 int isEmpty();
 char pop() {
-	return (!isEmpty()) ? stack[--top]: printf("stack underflow\n"), 0;
+	return (!isEmpty()) ? stack[--top]: (printf("stack underflow\n"),0);
 }
 int isEmpty() {
 	return (top == 0) ? TRUE : FALSE;
 }
 
 void checkParen(char string[]) {
+	int isValid = 1;
 	for (int i = 0; i < strlen(string);i++) {
 		switch (string[i]) 
 		{
@@ -34,28 +35,33 @@ void checkParen(char string[]) {
 				push(string[i]);
 				break;
 			case ')':
-				if (pop() == '(') {
-					break;
+
+				if (pop() =='(') {
 				}
 				else {
-					i = strlen(string);
-					break;
+					isValid = 0;
+					i = strlen(string); //ends loop
+					
 				}
+				break;
 			case ']':
-				if (pop() == '[') break;
+				if (pop() == '[');
 				else {
-					i = strlen(string);
-					break;
+					isValid = 0;
+					i = strlen(string); //ends loop
 				}
+				break;
 			case '}':
-				if (pop() == '{') break;
+				if (pop() == '{');
 				else {
-					i = strlen(string);
-					break;
+					isValid = 0;
+					i = strlen(string); //ends loop
 				}
+				break;
 		}
 	}
-	(top == 0) ? printf("valid"): printf("not valid");
+	printf("top is %d and isValid is %d\n",top,isValid);
+	(top == 0 && isValid) ? printf("valid"): printf("not valid");
 }
 
 int main(void) {
