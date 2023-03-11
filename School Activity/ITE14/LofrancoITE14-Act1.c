@@ -17,7 +17,7 @@ void addInventory(struct product *productList, int *numOfProducts) {
     tempProduct->productId = *numOfProducts + 1;
 
     printf("product Name: ");
-    scanf(" %[^\n]s",&tempProduct->name);
+    scanf(" %[\n]s",&tempProduct->name);
     printf("Quantity: ");
     scanf(" %d",&tempProduct->quantity);
     productList[*numOfProducts] = *tempProduct;
@@ -32,11 +32,70 @@ void printInventory(struct product *productList, int numOfProducts) {
         printf("%20d%20s%20d\n",productList[i].productId,productList[i].name,productList[i].quantity);
     }
 }
-struct product searchById(struct product *productList,int numOfProducts, int n) {
-    for (int i = 0;i < numOfProducts;i++) {
-        if (productList[i].productId == n) {
-            return productList[i];
+void deleteProduct(struct product *productList,int *numOfProducts,int index) {
+    for (; index < *numOfProducts-1;index++) {
+        productList[index] = productList[index+1];
+    }
+    for (int i = 0; i < *numOfProducts;i++) {
+        productList[i].productId = i+1;
+    }
+    *numOfProducts -= 1;
+}
+void updateProduct(struct product *product){
+    printf("Update Product Form:\n");
+    printf("Product ID: %d\n",product->productId);
+    printf("product Name: ");
+    scanf(" %[^\n]s",product->name);
+    printf("Quantity: ");
+    scanf("%d",&product->quantity);
+    getch();
+}
+void searchByID(struct product *productList, int *numOfProducts) {
+    int searchID;
+    int foundFlag = 0;
+    int i = 0;
+    printf("Enter ID: ");
+    scanf("%d",&searchID);
+    for (;i < *numOfProducts;i++) {
+        if (productList[i].productId == searchID) {
+            foundFlag = 1;
+            break;
         }
+    }
+    if (!foundFlag) {
+        printf("Not Found\n");
+        getch();
+    }
+    else {
+        printf("Found!\n");
+        printf("Product Info:\n");
+        printf("%20s%20s%20s\n","Product ID","Name","Quantity");
+        printf("%20d%20s%20d\n",productList[i].productId,productList[i].name,productList[i].quantity);
+        getch();
+        int option;
+        while (option != 3) {
+            system("cls");
+            printf("1. Delete\n");
+            printf("2. Update\n");
+            printf("3. Return to Menu\n");
+            printf("option: ");
+            scanf("%d",&option);
+            switch (option) {
+            case 1:
+                deleteProduct(productList,numOfProducts,i);
+                printInventory(productList,*numOfProducts);
+                option = 3;
+                break;
+            case 2:
+                updateProduct(&productList[i]);
+                printInventory(productList,*numOfProducts);
+                option = 3;
+                break;
+            default:
+                printf("Invalid option!\n");
+            }
+        }
+        
     }
 }
 //Create a  simple inventory program that small business
@@ -47,6 +106,7 @@ int main(void) {
     int option;
     int Searchid;
     while(1) {
+        system("cls");
         printf("Simple Inventory Program\n");
         printf("1. Add a product in the Inventory\n");
         printf("2. Display all product and its information\n");
@@ -69,6 +129,7 @@ int main(void) {
                 break;
             case 3:
                 system("cls");
+                searchByID(productList,&numOfProducts);
                 break;
             case 0:
                 printf("Exiting....");
