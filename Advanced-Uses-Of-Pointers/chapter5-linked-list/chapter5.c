@@ -59,12 +59,13 @@ int main(void) {
 	first = add_to_list(first, 20);
 	first = add_to_list(first, 30);
 	// printlinkedList(first);
-
+    // [NULL,10] -> [1,20] -> [2,30]
+    // 1              2
 	// struct node *result = NULL;
 	// result = searchList(first,20);
 	// printf("%d\n",result->value);
-	deleteNode(first, 20);
-	insertList(first,10,20);
+	// deleteNode(first, 20);
+	// insertList(first,10,20);
 	printlinkedList(first);
 	return 0;
 }

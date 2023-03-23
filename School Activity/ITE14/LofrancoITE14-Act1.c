@@ -50,6 +50,40 @@ void updateProduct(struct product *product){
     scanf("%d",&product->quantity);
     getch();
 }
+
+int binarySearch(int sortedArray[],int num, int size) {
+    int h,l,m;
+    h = size;
+    l = 0;
+    m = (l + h)/2;
+
+    int flagFound = 0;
+    // scanf("%d",&num);
+    while (l <= h) {
+        m = (l + h)/2;
+        if (sortedArray[m] == num) {
+            flagFound = 1;
+            break;
+        }
+        else if (sortedArray[m] > num) {
+            h = m-1;
+            // printf("%d\n",sortedArray[m]);
+        }
+        else {
+            l = m+1;
+            // printf("%d\n",sortedArray[m]);
+        }
+    }
+    if (flagFound) {
+        // printf("found at index %d\n",m);
+        return 1;
+    }
+    else {
+        // printf("Doesn't exist in array\n");
+        return -1;
+    }
+}
+
 void searchByID(struct product *productList, int *numOfProducts) {
     int searchID;
     int foundFlag = 0;
@@ -104,7 +138,7 @@ int main(void) {
     struct product productList[100];
     int numOfProducts = 0;
     int option;
-    int Searchid;
+    // int Searchid;
     while(1) {
         system("cls");
         printf("Simple Inventory Program\n");
