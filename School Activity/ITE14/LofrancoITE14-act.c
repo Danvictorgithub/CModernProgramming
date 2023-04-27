@@ -25,7 +25,6 @@ void bubbleSort(struct product *productList,int arraysize) {
         bubbleSort(productList, arraysize);
     }
 }
-
 int binarySearch(struct product *productList,int num, int size) {
     int h,l,m;
     h = size;
@@ -70,7 +69,10 @@ void printInventory(struct product *productList, int numOfProducts) {
     int i;
     printf("%20s%20s%20s\n","Product ID","Name","Quantity");
     for (i = 0 ; i < numOfProducts;i++) {
-        printf("%20d%20s%20d\n",productList[i].productId,productList[i].name,productList[i].quantity);
+        printf("%20d%20s%20d\n",
+        productList[i].productId,
+        productList[i].name,
+        productList[i].quantity);
     }
 }
 void updateOperation(struct product *productInfo) {
@@ -85,12 +87,6 @@ void updateOperation(struct product *productInfo) {
     scanf("%d",&productInfo->quantity);
     getch();
 }
-// void insertOperation(struct product *productList, int *numOfProducts) {
-//     int index;
-//     printf("Enter an index to insert after the index: ");
-//     scanf("%d", &index);
-//     int searchIndex = index = binarySearch(productList,index,*numOfProducts-1);
-// }
 void searchById(struct product *productList, int *numOfProducts) {
     struct product *found = NULL;
     int searchId;
@@ -145,8 +141,6 @@ void searchById(struct product *productList, int *numOfProducts) {
             }
     }
 }
-//Create a  simple inventory program that small business
-//Add a product list with product ID, name and quantity (5pts);
 int main(void) {
     struct product productList[100];
     int numOfProducts = 0;
@@ -157,7 +151,6 @@ int main(void) {
         printf("1. Insert a product in the Inventory\n");
         printf("2. Display all product and its information\n");
         printf("3. Search by ID\n");
-        // printf("4. Insert Product\n");
         printf("Option: ");
         scanf("%d",&option);
         switch(option) {
@@ -180,8 +173,6 @@ int main(void) {
                 system("cls");
                 searchById(productList, &numOfProducts);
                 break;
-            // case 4:
-            //     break;
             case 0:
                 exit(0);
             default:
