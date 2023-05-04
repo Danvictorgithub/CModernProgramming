@@ -7,7 +7,7 @@ int front = 0, rear = 0, size = 0/*,prev = 0*/;
 int queue[MAXQUEUE];
 
 int enqueue(int value) {
-	if (size == 3) {
+	if (size == MAXQUEUE) {
 		printf("\nqueue is full\n");
 		exit(0);
 	}
