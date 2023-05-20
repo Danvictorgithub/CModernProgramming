@@ -8,7 +8,15 @@ struct node {
 struct node *deleteNode(struct node *list, int n) {
 	struct node *current, *previous;
 	for (current = list, previous = NULL; current != NULL; previous = current,current = current->next) {
-		if (current -> value == n) {
+		if (current -> value == n) {\
+			if (previous == NULL) {
+				if (current->next != NULL) {
+					current = current->next;
+					free(current);
+					return list;
+				}
+				else {}
+			}
 			previous->next = current->next;
 			free(current);
 			return list;
@@ -57,14 +65,16 @@ int main(void) {
 	struct node *first = NULL;
 	first = add_to_list(first, 10);
 	first = add_to_list(first, 20);
-	first = add_to_list(first, 30);
+	// first = add_to_list(first, 30);
 	// printlinkedList(first);
     // [NULL,10] -> [1,20] -> [2,30]
     // 1              2
 	// struct node *result = NULL;
 	// result = searchList(first,20);
 	// printf("%d\n",result->value);
-	// deleteNode(first, 20);
+	deleteNode(first, 10);
+	deleteNode(first, 20);
+	add_to_list(first, 20);
 	// insertList(first,10,20);
 	printlinkedList(first);
 	return 0;

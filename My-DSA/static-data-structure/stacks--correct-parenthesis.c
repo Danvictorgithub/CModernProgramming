@@ -11,6 +11,7 @@ char stack[MAXSTACK];
 
 int push(char value) {
 	if (top >= MAXSTACK-1) {
+		printf("stack overflow");
 		return FULL;
 	}
 	stack[top++] = value;
