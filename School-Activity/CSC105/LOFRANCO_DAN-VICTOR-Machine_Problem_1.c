@@ -1,4 +1,4 @@
-// CSC105 Endianess Problem - Dan Victor Lofranco 211-00842
+// CSC105 Machine Problem 1 - Dan Victor Lofranco 211-00842
 #include <stdio.h>
 void printLittleEndian(int n) {
     int tempArray[10] = {0};
