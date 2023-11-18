@@ -1,12 +1,13 @@
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 void isSorted(int *array, int numArray);
 void printArray(int *array, int numArray, char *string);
 
 int *selectionSort(int *array, int numArray) {
 	int *sortedArray = malloc(sizeof(int)*numArray);
 	memcpy(sortedArray,array,sizeof(int)*numArray);
-	int min,minIndex = 0,temp;
+	int min,minIndex,temp = 0;
 	for (int i = 0; i < numArray;i++) {
 		min = sortedArray[i];
 		for (int j = i; j < numArray;j++) {

@@ -32,7 +32,7 @@ int *insertionSort(int *unsortedArray, int numArray) {
 // 5,11,6,12,13
 // 5,6,11,12,13
 int main(void) {
-	int unsortedArray[] = {12,11,13,5,6};
+	int unsortedArray[] = {5,3,4,7,2};
 	int *sortedArray = insertionSort(unsortedArray,sizeof(unsortedArray)/sizeof(unsortedArray[0]));
 	printArray(
 		unsortedArray,
