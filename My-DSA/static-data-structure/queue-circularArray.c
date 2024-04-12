@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
+// #include <conio.h>
 #define MAXQUEUE 3
 #define NEXT(n) ((n+1) % MAXQUEUE) //calculates the next position
 int front = 0, rear = 0, size = 0/*,prev = 0*/;
